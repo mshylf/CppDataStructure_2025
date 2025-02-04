@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #define MaxSize 2
 
@@ -6,48 +6,48 @@ template<class T>
 class SqList
 {
 public:
-	//无参构造一个空顺序表
+	//�޲ι���һ����˳���
 	SqList();
-	//有参构造一个长度为n的空顺序表
+	//�вι���һ������Ϊn�Ŀ�˳���
 	SqList(T a[], int n);
-	//析构函数释放顺序表内存
+	//���������ͷ�˳����ڴ�
 	~SqList();
-	//返回data总大小
+	//����data�ܴ�С
 	int SizeofData();
-	//求顺序表的长度	
+	//��˳���ĳ���	
 	int GetLength();
-	//查找第i个元素(从零开始)并返回该元素	
+	//���ҵ�i��Ԫ��(���㿪ʼ)�����ظ�Ԫ��	
 	bool GetItem(int i, T& e);
-	//查找值为x的元素并返回其位置	
+	//����ֵΪx��Ԫ�ز�������λ��	
 	int locate(T x);
-	//在第i个位置插入值为x的元素
+	//�ڵ�i��λ�ò���ֵΪx��Ԫ��
 	void insert(int i, T X);
-	//删除第i个位置的元素,并将其通过&e带出函数
+	//ɾ����i��λ�õ�Ԫ��,������ͨ��&e��������
 	bool remove(int i, T& e);
-	//遍历顺序表
+	//����˳���
 	void forEach();
-	//判断顺序表是否为空
+	//�ж�˳����Ƿ�Ϊ��
 	bool empty();
 private:
 	T* data;
-	//存放数据的数组
+	//������ݵ�����
 	int length;
-	//记录顺序表中存储的元素个数
+	//��¼˳����д洢��Ԫ�ظ���
 };
 
 template<typename T>
-//无参构造建立一个空的顺序表
+//�޲ι��콨��һ���յ�˳���
 SqList<T>::SqList() :length(0)
 {
 	this->data = new T[MaxSize];
 }
 
 template<typename T>
-//有参构造建立一个长度为n，内容为a[]的数组
+//�вι��콨��һ������Ϊn������Ϊa[]������
 SqList<T>::SqList(T a[], int n) :length(0)
 {
-	//若n>MaxSize,则将顺序表扩大为MaxSize*(n/MaxSize+1)
-	//否则其大小为MaxSize
+	//��n>MaxSize,��˳�������ΪMaxSize*(n/MaxSize+1)
+	//�������СΪMaxSize
 	if (n > MaxSize)
 	{
 		int i = n / MaxSize;
@@ -65,7 +65,7 @@ SqList<T>::SqList(T a[], int n) :length(0)
 }
 
 template<typename T>
-//返回data总大小
+//����data�ܴ�С
 int SqList<T>::SizeofData()
 {
 
@@ -73,7 +73,7 @@ int SqList<T>::SizeofData()
 }
 
 template<typename T>
-//析构函数释放顺序表内存
+//���������ͷ�˳����ڴ�
 SqList<T>::~SqList()
 {
 	delete[] this->data;
@@ -81,21 +81,21 @@ SqList<T>::~SqList()
 }
 
 template<typename T>
-//返回长度
+//���س���
 int SqList<T>::GetLength()
 {
 	return this->length;
 }
 
 template<typename T>
-//按位查找，返回第i位的元素
-//使用引用将元素带出,返回值使用情况返回较好
-//若返回值为元素,则不好判断是否越界(越界不能返回模板,只能抛出异常)
+//��λ���ң����ص�iλ��Ԫ��
+//ʹ�����ý�Ԫ�ش���,����ֵʹ��������ؽϺ�
+//�����ֵΪԪ��,�򲻺��ж��Ƿ�Խ��(Խ�粻�ܷ���ģ��,ֻ���׳��쳣)
 bool SqList<T>::GetItem(int i, T& e)
 {
 	if (i >= this->length || i < 0)
 	{
-		std::cout << "您访问的位置越界" << std::endl;
+		std::cout << "�����ʵ�λ��Խ��" << std::endl;
 		return false;
 	}
 	e = this->data[i];
@@ -103,7 +103,7 @@ bool SqList<T>::GetItem(int i, T& e)
 }
 
 template<typename T>
-//查找值为x的元素并返回其位置
+//����ֵΪx��Ԫ�ز�������λ��
 int SqList<T>::locate(T x)
 {
 	for (int i = 0; i < this->length; i++)
@@ -113,15 +113,15 @@ int SqList<T>::locate(T x)
 			return i;
 		}
 	}
-	std::cout << "不存在该元素" << std::endl;
+	std::cout << "�����ڸ�Ԫ��" << std::endl;
 	return -1;
 }
 
 template<typename T>
-//在第i个位置插入值为x的元素
+//�ڵ�i��λ�ò���ֵΪx��Ԫ��
 void SqList<T>::insert(int i, T x)
 {
-	//判断顺序表大小是否正确,若小了则多分配MaxSize的长度
+	//�ж�˳����С�Ƿ���ȷ,��С��������MaxSize�ĳ���
 	int j = this->SizeofData() / sizeof(T) / MaxSize;
 	if (this->length + 1 > j * MaxSize)
 	{
@@ -135,10 +135,10 @@ void SqList<T>::insert(int i, T x)
 	}
 	if (i < 0)
 	{
-		std::cout << "输入了越界的i值" << std::endl;
+		std::cout << "������Խ���iֵ" << std::endl;
 		return;
 	}
-	//将插入位置的后的元素后移
+	//������λ�õĺ��Ԫ�غ���
 	for (int k = length; k > i; k--)
 	{
 		data[k] = data[k - 1];
@@ -148,12 +148,12 @@ void SqList<T>::insert(int i, T x)
 }
 
 template<typename T>
-//删除第i个位置的元素,并将其通过&e带出函数
+//ɾ����i��λ�õ�Ԫ��,������ͨ��&e��������
 bool SqList<T>::remove(int i, T& e)
 {
 	if (i < 0 || i >= this->length)
 	{
-		std::cout << "您的输入越界" << std::endl;
+		std::cout << "��������Խ��" << std::endl;
 		e = NULL;
 		return false;
 	}
@@ -167,10 +167,10 @@ bool SqList<T>::remove(int i, T& e)
 }
 
 template<typename T>
-//遍历顺序表
+//����˳���
 inline void SqList<T>::forEach()
 {
-	std::cout << "元素遍历如下:" << std::endl;
+	std::cout << "Ԫ�ر�������:" << std::endl;
 	for (int i = 0; i < this->length; i++)
 	{
 		std::cout << this->data[i] << std::endl;
@@ -178,7 +178,7 @@ inline void SqList<T>::forEach()
 }
 
 template<typename T>
-//判断是否为空
+//�ж��Ƿ�Ϊ��
 inline bool SqList<T>::empty()
 {
 	if (this->length)
