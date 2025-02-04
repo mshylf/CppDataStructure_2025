@@ -1,7 +1,8 @@
-#include"SqList.hpp"
+﻿#include"SqList.hpp"
 #include"test.h"
 using namespace std;
 
+//顺序表测试函数
 int SqListTest()
 {
 	cout << "你好" << endl;
@@ -54,6 +55,13 @@ int SqListTest()
 		cout << "移除了第" << i << "个位置的元素" << temp << endl;
 	}
 	SQ1.forEach();
+
+	return 0;
+}
+
+//单链表测试函数
+int LinkList()
+{
 
 	return 0;
 }

@@ -1,6 +1,6 @@
-#pragma once
-#include<iostream>
-#define MaxSize 2
+﻿#pragma once
+#include <iostream>
+#define MaxSize 10
 
 template<class T>
 class SqList
