@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\start\BaiduSyncdisk\代码\使用c++模板技术实现各数据结构类型\使用c++模板技术实现各数据结构类型\SqList.hpp">
+    <ClInclude Include="SqList.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\start\BaiduSyncdisk\代码\使用c++模板技术实现各数据结构类型\使用c++模板技术实现各数据结构类型\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
