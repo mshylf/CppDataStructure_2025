@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <iostream>
-#define MaxSize 10
+constexpr auto MaxSize = 10;
 
 template<class T>
 class SqList

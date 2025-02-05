@@ -1,11 +1,11 @@
 ﻿#include"SqList.hpp"
+#include"LinkList.hpp"
 #include"test.h"
 using namespace std;
 
 //顺序表测试函数
 int SqListTest()
 {
-	cout << "你好" << endl;
 	// 为有参构造准备条件
 	int arr[] = {4, 5, 6, 7};
 	int n = sizeof(arr) / sizeof(arr[0]);
@@ -60,8 +60,23 @@ int SqListTest()
 }
 
 //单链表测试函数
-int LinkList()
+int LinkListTest()
 {
+	//无参构造测试
+	LinkList<int> temp1;
+	
+	//有参函数构造
+	int arr[] = { 4, 5, 6, 7 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	//头插法
+	LinkList<int> temp_0(arr, n, 0);
+	//尾插法
+	LinkList<int> temp_1(arr, n, 1);
 
+	cout << "有参构造头插法" << endl;
+	temp_0.forEachList();
+	cout << endl;
+	cout << "有参构造尾插法" << endl;
+	temp_1.forEachList();
 	return 0;
 }
