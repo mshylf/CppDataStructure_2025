@@ -1,13 +1,13 @@
-﻿#include"SqList.hpp"
+﻿#include"../../src/SqList/SqList.hpp"
+#include"../../src/LinkList/LinkList.hpp"
 #include"test.h"
 using namespace std;
 
 //顺序表测试函数
 int SqListTest()
 {
-	cout << "你好" << endl;
 	// 为有参构造准备条件
-	int arr[] = {4, 5, 6, 7};
+	int arr[] = { 4, 5, 6, 7 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 
 	// 有参构造顺序表
@@ -22,7 +22,7 @@ int SqListTest()
 	cout << "元素个数为:" << SQ1.GetLength() << endl;
 	cout << "顺序表大小为:" << SQ1.SizeofData() << "字节" << endl;
 	std::cout << "共有" << SQ1.GetLength() / MaxSize << "个MaxSize块," << "每个MaxSize块长度为" << MaxSize << std::endl
-			  << endl;
+		<< endl;
 
 	// 测试GetItem(int i, T &e)函数
 	// 超出范围测试
@@ -60,8 +60,40 @@ int SqListTest()
 }
 
 //单链表测试函数
-int LinkList()
+int LinkListTest()
 {
+	//无参构造测试
+	LinkList<int> temp1;
+	//insert(int i, T x)测试
+	temp1.insert(1, 1);
+	temp1.insert(1, 0);
+	temp1.insert(3, 2);
+	cout << "无参函数与插入函数检测：" << endl;
+	temp1.forEachList();
+	cout << endl;
+
+	//有参函数构造
+	int arr[] = { 4, 5, 6, 7 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	//头插法
+	LinkList<int> temp_0(arr, n, 0);
+	//尾插法
+	LinkList<int> temp_1(arr, n, 1);
+
+	cout << "有参构造头插法" << endl;
+	temp_0.forEachList();
+	cout << endl;
+	cout << "有参构造尾插法" << endl;
+	temp_1.forEachList();
+	cout << endl;
+	cout << "测试按位查找头插法第2个输出：" << temp_0.getItem(2) << endl;
+	cout << "测试按位查找尾插法第2个输出：" << temp_1.getItem(2) << endl;
+	cout << "按位查找越界测试:" << temp_1.getItem(8) << endl;
+	cout << endl;
+	cout << "测试按值查找头插法第2个输出：" << temp_0.locate(4) << endl;
+	cout << "测试按值查找尾插法第2个输出：" << temp_1.locate(4) << endl;
+	cout << "按值查找越界测试: " << temp_1.locate(0) << endl;
+
 
 	return 0;
 }

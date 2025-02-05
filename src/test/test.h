@@ -2,4 +2,4 @@
 //顺序表测试函数
 int SqListTest();
 //单链表测试函数
-int LinkList();
+int LinkListTest();
