@@ -93,7 +93,28 @@ int LinkListTest()
 	cout << "测试按值查找头插法第2个输出：" << temp_0.locate(4) << endl;
 	cout << "测试按值查找尾插法第2个输出：" << temp_1.locate(4) << endl;
 	cout << "按值查找越界测试: " << temp_1.locate(0) << endl;
+	cout << endl;
 
+	//insertNextNode(T e, T x)在第一个数据为e的结点后插入值为x的元素测试
+	temp1.insertNextNode(0, 0);
+	temp1.insertNextNode(2, 4);
+	temp1.forEachList();
+	//失败情况测试
+	temp1.insertNextNode(3, 2);
+	cout << endl;
 
+	//insertNextNode(T e, T x)在第一个数据为e的结点前插入值为x的元素测试
+	temp1.insertPriorNode(0, 0);
+	temp1.insertPriorNode(4, 3);
+	temp1.forEachList();
+	//失败情况测试
+	temp1.insertNextNode(5, 2);
+	cout << endl;
+
+	//测试删除函数
+	cout << "删除了" << temp1.remove(1) << "元素" << endl;
+	cout << "删除了" << temp1.remove(6) << "元素" << endl;
+	temp1.forEachList();
+	temp1.remove(7);
 	return 0;
 }
