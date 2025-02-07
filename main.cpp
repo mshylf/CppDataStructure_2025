@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-	doubleLinkListTest();
-		return 0;
+	stackTest();
+	return 0;
 }
