@@ -1,5 +1,6 @@
 ﻿#include"../../src/SqList/SqList.hpp"
 #include"../../src/LinkList/LinkList.hpp"
+#include"../../src/LinkList/doubleLinkList.hpp"
 #include"test.h"
 using namespace std;
 
@@ -116,5 +117,24 @@ int LinkListTest()
 	cout << "删除了" << temp1.remove(6) << "元素" << endl;
 	temp1.forEachList();
 	temp1.remove(7);
+	return 0;
+}
+
+//双链表测试函数
+int doubleLinkListTest()
+{
+	dLinkList<int> temp;
+	temp.forEach();
+
+	//测试插入函数
+	temp.insert(1, 0);
+	temp.insert(2, 1);
+	temp.insert(3, 2);
+	temp.forEach();
+	temp.insert(5, 2);
+
+	//测试删除函数
+	cout << "删除了" << temp.remove(3) << "元素" << endl;
+	temp.forEach();
 	return 0;
 }

@@ -3,3 +3,5 @@
 int SqListTest();
 //单链表测试函数
 int LinkListTest();
+//双链表测试函数
+int doubleLinkListTest();

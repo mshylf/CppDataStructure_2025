@@ -43,7 +43,7 @@ public:
 	//注意按值插入两者区别，在前插函数中使用了不同的插入逻辑
 
 	//删除单链表的第i个元素并返回
-	T remove(int i);
+	T remove(int j);
 	//删除函数同样有按值删除结点前后的函数，与按值插入思想相似，不再赘述
 };
 
@@ -209,34 +209,6 @@ inline void LinkList<T>::insertNextNode(T e, T x)
 	}
 }
 
-//在第一个数据为e的结点后插入值为x的元素
-template<class T>
-inline void LinkList<T>::insertNextNode(T e, T x)
-{
-	LNode<T>* p = this->head;
-	//找到第i个元素（数据为e）并在其后插入即可
-	for (int i = 0; i < this->length; i++)
-	{
-		p = p->NEXT;
-		if (p->data == e)
-		{
-			LNode<T>* q = new LNode<T>;
-			q->data = x;
-			q->NEXT = p->NEXT;
-			p->NEXT = q;
-
-			this->length++;
-			return;
-		}
-		//输出错误信息
-		if (i == this->length - 1)
-		{
-			std::cout << "没有您要查询的元素" << std::endl;
-		}
-	}
-}
-
-
 //在第一个数据为e的结点前插入值为x的元素
 template<class T>
 inline void LinkList<T>::insertPriorNode(T e, T x)
@@ -269,64 +241,6 @@ inline void LinkList<T>::insertPriorNode(T e, T x)
 		}
 	}
 }
-
-
-//删除单链表的第i个元素并返回
-template<class T>
-inline T LinkList<T>::remove(int j)
-{
-	if (j > this->length || j < 0)
-	{
-		std::cout << "您的删除越界了";
-		return NULL;
-	}
-	LNode<T>* p = this->head;
-	//找到第j-1个元素（数据为e）并删除第j个元素
-	for (int i = 1; i < j; i++)
-	{
-		p = p->NEXT;
-	}
-	LNode<T>* q = p->NEXT;
-	p->NEXT = p->NEXT->NEXT;
-	delete q;
-	this->length--;
-
-	return T();
-}
-
-//在第一个数据为e的结点前插入值为x的元素
-template<class T>
-inline void LinkList<T>::insertPriorNode(T e, T x)
-{
-	LNode<T>* p = this->head;
-	//假设原单链表中第i，i+1结点对应的数据分别为e,s ；待插入结点数据为x
-	//则该函数在找到第i个元素（数据为e）后需要在其前面插入结点，又需要找到第i-1个结点向其后插入新结点，需要重新进行一次循环
-	//我们可以找到一种方法将第二次查找的时间复杂度从O(n)降为O(1)
-	//既：1、寻找到第i个元素后正常将新结点插入在其后，此时第i，i+1，i+2结点对应的数据分别为e，x，s
-	// 2、仅需将第i，i+1结点的数据进行交换即可得到我们期望的效果：x，e，s
-	for (int i = 0; i < this->length; i++)
-	{
-		p = p->NEXT;
-		if (p->data == e)
-		{
-			LNode<T>* q = new LNode<T>;
-			q->data = x;
-			q->NEXT = p->NEXT;
-			p->NEXT = q;
-
-			q->data = p->data;
-			p->data = x;
-			this->length++;
-			return;
-		}
-		//输出错误信息
-		if (i == this->length - 1)
-		{
-			std::cout << "没有您要查询的元素" << std::endl;
-		}
-	}
-}
-
 
 //删除单链表的第i个元素并返回
 template<class T>
