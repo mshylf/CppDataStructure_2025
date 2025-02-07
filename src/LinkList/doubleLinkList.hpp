@@ -104,24 +104,23 @@ inline void dLinkList<T>::forEach()
 template<class T>
 inline T dLinkList<T>::remove(int i)
 {
-	if (i<1 || i>this->length + 1)
+	if (i<1 || i>this->length)
 	{
 		std::cout << "您的输入越界了" << std::endl;
 		return NULL;
 	}
 	DNode<T>* p = this->head;
 	//找到第i个元素并删除
-	for (int j = 0; j < this->length; j++)
+	for (int j = 1; j <= i; j++)
 	{
 		p = p->next;
-
-		p->prior->next = p->next;
-		p->next->prior = p->prior;
-
-		T temp = p->data;
-		delete p;
-		this->length--;
-		return temp;
 	}
 
+	p->prior->next = p->next;
+	p->next->prior = p->prior;
+
+	T temp = p->data;
+	delete p;
+	this->length--;
+	return temp;
 }

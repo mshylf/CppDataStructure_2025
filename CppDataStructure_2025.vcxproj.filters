@@ -24,6 +24,12 @@
     <ClInclude Include="src\LinkList\LinkList.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\Queue\Queue.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stack\LStack.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\LinkList\doubleLinkList.hpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stack\stack.hpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

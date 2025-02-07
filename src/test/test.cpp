@@ -1,6 +1,4 @@
-﻿#include"../../src/SqList/SqList.hpp"
-#include"../../src/LinkList/LinkList.hpp"
-#include"../../src/LinkList/doubleLinkList.hpp"
+﻿
 #include"test.h"
 using namespace std;
 
@@ -138,3 +136,57 @@ int doubleLinkListTest()
 	temp.forEach();
 	return 0;
 }
+
+//栈测试函数
+int stackTest()
+{
+	Stack<int> temp;
+	temp.forEach();
+	cout << endl;
+
+	temp.push(0);
+	temp.push(1);
+	temp.push(2);
+	temp.push(3);
+	temp.push(4);
+	temp.push(5);
+	temp.push(6);
+	temp.push(7);
+	temp.push(8);
+	temp.push(9);
+	temp.push(10);
+	temp.push(11);
+	temp.forEach();
+	cout << endl;
+
+	cout << "出栈" << temp.pop() << "元素" << endl;
+	cout << "出栈" << temp.pop() << "元素" << endl;
+	cout << "出栈" << temp.pop() << "元素" << endl;
+	temp.forEach();
+	cout << endl;
+	return 0;
+}
+
+int LStackTest()
+{
+	//测试构造，插入以及遍历函数
+	LStack<int> temp;
+	temp.push(0);
+	temp.push(1);
+	temp.push(2);
+	temp.push(3);
+	temp.forEach();
+	cout << endl;
+
+	//测试出栈函数
+	cout << "出栈元素为：" << temp.pop() << endl;
+	cout << "出栈元素为：" << temp.pop() << endl;
+	cout << "出栈元素为：" << temp.pop() << endl;
+	temp.forEach();
+	cout << endl;
+
+	//测试栈顶元素获取函数
+	cout << "当前栈顶元素为" << temp.getTop() << endl;
+	return 0;
+}
+

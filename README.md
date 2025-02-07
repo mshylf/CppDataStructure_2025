@@ -6,6 +6,7 @@
 - 顺序表
 - 单链表
 - 双链表
+- 栈
 
 ## 文件结构及功能描述
 
@@ -23,9 +24,11 @@ CppDataStructure_2025
 │   │   └── doubleLinkList.hpp
 │   ├── SqList
 │   │   └── SqList.hpp
-│   └── test
-│       ├── test.h
-│       └── test.cpp─ test.cpp
+│   ├── test
+│   │  ├── test.h
+│   │  └── test.cpp
+│   ├── stack
+│      └── stack.hpp
 ```
 
 | 文件 | 功能描述 |
@@ -41,3 +44,5 @@ CppDataStructure_2025
 | SqList.hpp | 顺序表实现 |
 | test.h | 测试文件头文件 |
 | test.cpp | 测试文件实现代码 |
+|stack.hpp|栈实现|
+

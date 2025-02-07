@@ -19,13 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Queue\Queue.hpp" />
     <ClInclude Include="src\SqList\SqList.hpp" />
+    <ClInclude Include="src\stack\LStack.hpp" />
     <ClInclude Include="src\test\test.h" />
     <ClInclude Include="src\LinkList\LinkList.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\LinkList\doubleLinkList.hpp" />
+    <ClCompile Include="src\stack\stack.hpp" />
     <ClCompile Include="src\test\test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
