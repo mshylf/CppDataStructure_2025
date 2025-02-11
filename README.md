@@ -1,12 +1,17 @@
 ﻿# 使用C++及模板技术实现各种数据结构类型
+GitHub仓库地址：https://github.com/mshylf/CppDataStructure_2025
 
-本项目使用C++实现各种数据结构类型，为个人学习记录使用，发现错误请及时指正。
+国内镜像仓库地址：https://gitcode.com/2404_89567743/CppDataStructure_2025
+
+本项目使用visual studio 2022创建C++项目实现各种数据结构类型，为个人学习记录使用，若发现错误烦请及时指正。
 
 ## 已更新：
 - 顺序表
 - 单链表
 - 双链表
-- 栈
+- 顺序栈
+- 链栈
+- 循环队列
 
 ## 文件结构及功能描述
 
@@ -28,7 +33,10 @@ CppDataStructure_2025
 │   │  ├── test.h
 │   │  └── test.cpp
 │   ├── stack
-│      └── stack.hpp
+│   │   ├── stack.hpp
+│   │   └── LStack.hpp
+│   ├── Queue
+│       └── CQueue.hpp
 ```
 
 | 文件 | 功能描述 |
@@ -39,10 +47,15 @@ CppDataStructure_2025
 | CppDataStructure_2025.sln | 解决方案文件 |
 | CppDataStructure_2025.vcxproj | 项目文件，记录项目相关的属性配置 |
 | CppDataStructure_2025.vcxproj.filters | 项目文件过滤器 |
-| LinkList.hpp | 单链表实现 |
-| doubleLinkList.hpp | 双链表实现 |
-| SqList.hpp | 顺序表实现 |
-| test.h | 测试文件头文件 |
-| test.cpp | 测试文件实现代码 |
-|stack.hpp|栈实现|
+|src|代码实现文件夹|
 
+|src文件子目录|文件名|功能描述|
+|:-:|:-:|:-:|
+|LinkList|LinkList.hpp|单链表实现|
+||doubleLinkList.hpp|双链表实现|
+|SqList|SqList.hpp|顺序表实现|
+|test|test.h|测试文件头文件|
+||test.cpp|测试文件实现代码|
+|stack|stack.hpp|顺序栈实现|
+||LStack.hpp|链栈实现|
+|Queue|CQueue.hpp|循环队列实现|

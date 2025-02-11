@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Queue\Queue.hpp" />
+    <ClInclude Include="src\Queue\CQueue.hpp" />
     <ClInclude Include="src\SqList\SqList.hpp" />
     <ClInclude Include="src\stack\LStack.hpp" />
     <ClInclude Include="src\test\test.h" />

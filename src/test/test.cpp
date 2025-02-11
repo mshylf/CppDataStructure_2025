@@ -190,3 +190,20 @@ int LStackTest()
 	return 0;
 }
 
+int CQueueTest()
+{
+	//测试入队与遍历函数
+	CQueue<int> temp;
+	temp.enCQueue(0);
+	temp.enCQueue(1);
+	temp.enCQueue(2);
+	temp.forEach();
+	//测试出队函数
+	cout << "当前对头元素为" << temp.getCQueue() << endl;
+
+	cout << "出队元素为：" << temp.deCQueue() << endl;
+	cout << "出队元素为：" << temp.deCQueue() << endl;
+	temp.forEach();
+	return 0;
+}
+

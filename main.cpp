@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-	LStackTest();
+	CQueueTest();
 	return 0;
 }

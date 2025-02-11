@@ -4,6 +4,7 @@
 #include"../../src/LinkList/doubleLinkList.hpp"
 #include"../../src/stack/stack.hpp"
 #include"../../src/stack/LStack.hpp"
+#include"../../src/Queue/CQueue.hpp"
 
 //顺序表测试函数
 int SqListTest();
@@ -15,3 +16,5 @@ int doubleLinkListTest();
 int stackTest();
 //链栈测试函数
 int LStackTest();
+//循环队列测试函数
+int CQueueTest();
