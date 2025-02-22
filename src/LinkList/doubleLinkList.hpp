@@ -39,7 +39,7 @@ inline dLinkList<T>::dLinkList()
 	this->head = new DNode<T>;
 	this->head->prior = this->head;
 	this->head->next = this->head;
-	this->head->data = NULL;
+	this->head->data = T();
 }
 
 //析构函数
@@ -107,7 +107,7 @@ inline T dLinkList<T>::remove(int i)
 	if (i<1 || i>this->length)
 	{
 		std::cout << "您的输入越界了" << std::endl;
-		return NULL;
+		return T();
 	}
 	DNode<T>* p = this->head;
 	//找到第i个元素并删除

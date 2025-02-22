@@ -6,12 +6,13 @@ GitHub仓库地址：https://github.com/mshylf/CppDataStructure_2025
 本项目使用visual studio 2022创建C++项目实现各种数据结构类型，为个人学习记录使用，若发现错误烦请及时指正。
 
 ## 已更新：
-- 顺序表
-- 单链表
-- 双链表
-- 顺序栈
-- 链栈
-- 循环队列
+点击以下对应链接查看具体实现说明文档
+- [顺序表](https://blog.csdn.net/2404_89567743/article/details/145797077?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797077&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [单链表](https://blog.csdn.net/2404_89567743/article/details/145796670?fromshare=blogdetail&sharetype=blogdetail&sharerId=145796670&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [双链表](https://blog.csdn.net/2404_89567743/article/details/145796901?fromshare=blogdetail&sharetype=blogdetail&sharerId=145796901&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [顺序栈](https://blog.csdn.net/2404_89567743/article/details/145797210?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797210&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [链栈](https://blog.csdn.net/2404_89567743/article/details/145797150?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797150&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [循环队列](https://blog.csdn.net/2404_89567743/article/details/145797356?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797356&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
 
 ## 文件结构及功能描述
 
@@ -30,8 +31,8 @@ CppDataStructure_2025
 │   ├── SqList
 │   │   └── SqList.hpp
 │   ├── test
-│   │  ├── test.h
-│   │  └── test.cpp
+│   │   ├── test.h
+│   │   └── test.cpp
 │   ├── stack
 │   │   ├── stack.hpp
 │   │   └── LStack.hpp

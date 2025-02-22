@@ -249,7 +249,7 @@ inline T LinkList<T>::remove(int j)
 	if (j > this->length || j < 0)
 	{
 		std::cout << "您的删除越界了";
-		return NULL;
+		return T();
 	}
 	LNode<T>* p = this->head;
 	//找到第j-1个元素（数据为e）并删除第j个元素

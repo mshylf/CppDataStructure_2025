@@ -155,7 +155,7 @@ bool SqList<T>::remove(int i, T& e)
 	if (i < 0 || i >= this->length)
 	{
 		std::cout << "您的输入越界" << std::endl;
-		e = NULL;
+		e = T();
 		return false;
 	}
 	e = this->data[i];
