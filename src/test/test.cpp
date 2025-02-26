@@ -207,3 +207,52 @@ int CQueueTest()
 	return 0;
 }
 
+int bracketCheckTest()
+{
+	char str1[] = { '(','{','[',']','}',')' };
+	char str2[] = { '(','{','[',']','}','}' };
+	char str3[] = { '(','{','[',']','}','w' };
+	char str4[] = { '(','{','w',']','}',']' };
+
+
+
+	cout << "字符串: ";
+	printStr(str1, 6);
+	if (bracketCheck(str1, 6))
+		cout << "成功" << endl;
+	else
+		cout << "失败" << endl;
+
+	cout << "字符串: ";
+	printStr(str2, 6);
+	if (bracketCheck(str2, 6))
+		cout << "成功" << endl;
+	else
+		cout << "失败" << endl;
+
+	cout << "字符串: ";
+	printStr(str3, 6);
+	if (bracketCheck(str3, 6))
+		cout << "成功" << endl;
+	else
+		cout << "失败" << endl;
+
+	cout << "字符串: ";
+	printStr(str4, 6);
+	if (bracketCheck(str4, 6))
+		cout << "成功" << endl;
+	else
+		cout << "失败" << endl;
+
+	return 0;
+
+}
+
+void printStr(char str[], int length)
+{
+	for (int i = 0; i < length; i++)
+	{
+		cout << str[i] << ' ';
+	}
+}
+

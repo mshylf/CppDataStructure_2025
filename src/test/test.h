@@ -5,6 +5,7 @@
 #include"../../src/stack/stack.hpp"
 #include"../../src/stack/LStack.hpp"
 #include"../../src/Queue/CQueue.hpp"
+#include"../../src/stack/bracketCheck.h"
 
 //顺序表测试函数
 int SqListTest();
@@ -18,3 +19,8 @@ int stackTest();
 int LStackTest();
 //循环队列测试函数
 int CQueueTest();
+//测试括号检测函数
+int bracketCheckTest();
+
+//打印字符串
+void printStr(char str[], int length);

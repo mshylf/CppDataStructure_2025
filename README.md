@@ -13,6 +13,8 @@ GitHub仓库地址：https://github.com/mshylf/CppDataStructure_2025
 - [顺序栈](https://blog.csdn.net/2404_89567743/article/details/145797210?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797210&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
 - [链栈](https://blog.csdn.net/2404_89567743/article/details/145797150?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797150&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
 - [循环队列](https://blog.csdn.net/2404_89567743/article/details/145797356?fromshare=blogdetail&sharetype=blogdetail&sharerId=145797356&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+- [栈括号匹配](https://blog.csdn.net/2404_89567743/article/details/145892088?fromshare=blogdetail&sharetype=blogdetail&sharerId=145892088&sharerefer=PC&sharesource=2404_89567743&sharefrom=from_link)
+
 
 ## 文件结构及功能描述
 
@@ -35,7 +37,9 @@ CppDataStructure_2025
 │   │   └── test.cpp
 │   ├── stack
 │   │   ├── stack.hpp
-│   │   └── LStack.hpp
+│   │   ├── LStack.hpp
+│   │   ├── bracketCheck.h
+│   │   └── bracketCheck.cpp
 │   ├── Queue
 │       └── CQueue.hpp
 ```
@@ -59,4 +63,6 @@ CppDataStructure_2025
 ||test.cpp|测试文件实现代码|
 |stack|stack.hpp|顺序栈实现|
 ||LStack.hpp|链栈实现|
+||bracketCheck.h|括号匹配头文件|
+||bracketCheck.cpp|括号匹配实现|
 |Queue|CQueue.hpp|循环队列实现|

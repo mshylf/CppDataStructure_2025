@@ -20,6 +20,9 @@ int main()
     //LStackTest();
 
     //循环队列测试函数
-    CQueueTest();
+    //CQueueTest();
+
+    //测试括号检测函数
+    bracketCheckTest();
     return 0;
 }
