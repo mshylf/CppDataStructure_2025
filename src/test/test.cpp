@@ -207,6 +207,7 @@ int CQueueTest()
 	return 0;
 }
 
+//括号匹配函数测试
 int bracketCheckTest()
 {
 	char str1[] = { '(','{','[',']','}',')' };
@@ -246,6 +247,31 @@ int bracketCheckTest()
 
 	return 0;
 
+}
+
+//表达式求值函数测试
+int evaluateExpressionTest()
+{
+	//后缀表达式求值测试函数
+	cout << "后缀表达式求值测试" << endl;
+	char str1[] = "4#7#+";
+	char str2[] = "4#7#2#3#*-*26#5#8#+/+";
+	char str3[] = "15#7#1#1#+-/3#*2#1#1#++-";
+
+	cout << "字符串: " << str1 << "	值为：" << evaluatePostfix(str1) << endl;
+	cout << "字符串: " << str2 << "	值为：" << evaluatePostfix(str2) << endl;
+	cout << "字符串: " << str3 << "	值为：" << evaluatePostfix(str3) << endl;
+
+	//中缀表达式转化为后缀表达式测试
+	cout << "中缀表达式转化为后缀表达式测试" << endl;
+	char str4[] = "1+2*3+4";
+	char str5[] = "1*(2+3)";
+	char str6[] = "((15/(7-(1+1)))*3)-(2+(1+1))";
+
+	cout << "字符串: " << str4 << "    后缀表达式为： " << infixToPostfix(str4) << endl;
+	cout << "字符串: " << str5 << "    后缀表达式为： " << infixToPostfix(str5) << endl;
+	cout << "字符串: " << str6 << "    后缀表达式为： " << infixToPostfix(str6) << endl;
+	return 0;
 }
 
 void printStr(char str[], int length)

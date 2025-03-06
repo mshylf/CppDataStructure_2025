@@ -6,6 +6,7 @@
 #include"../../src/stack/LStack.hpp"
 #include"../../src/Queue/CQueue.hpp"
 #include"../../src/stack/bracketCheck.h"
+#include"../../src/stack/evaluateExpression.h"
 
 //顺序表测试函数
 int SqListTest();
@@ -21,6 +22,9 @@ int LStackTest();
 int CQueueTest();
 //测试括号检测函数
 int bracketCheckTest();
+//表达式求值函数测试
+int evaluateExpressionTest();
+
 
 //打印字符串
 void printStr(char str[], int length);

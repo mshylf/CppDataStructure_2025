@@ -23,6 +23,9 @@ int main()
     //CQueueTest();
 
     //测试括号检测函数
-    bracketCheckTest();
+    //bracketCheckTest();
+
+    //表达式求值函数测试
+    evaluateExpressionTest();
     return 0;
 }

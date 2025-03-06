@@ -22,6 +22,7 @@
     <ClInclude Include="src\Queue\CQueue.hpp" />
     <ClInclude Include="src\SqList\SqList.hpp" />
     <ClInclude Include="src\stack\bracketCheck.h" />
+    <ClInclude Include="src\stack\evaluateExpression.h" />
     <ClInclude Include="src\stack\LStack.hpp" />
     <ClInclude Include="src\test\test.h" />
     <ClInclude Include="src\LinkList\LinkList.hpp" />
@@ -30,6 +31,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\LinkList\doubleLinkList.hpp" />
     <ClCompile Include="src\stack\bracketCheck.cpp" />
+    <ClCompile Include="src\stack\evaluateExpression.cpp" />
     <ClCompile Include="src\stack\stack.hpp" />
     <ClCompile Include="src\test\test.cpp" />
   </ItemGroup>
