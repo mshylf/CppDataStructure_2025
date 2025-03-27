@@ -24,6 +24,7 @@
     <ClInclude Include="src\stack\bracketCheck.h" />
     <ClInclude Include="src\stack\evaluateExpression.h" />
     <ClInclude Include="src\stack\LStack.hpp" />
+    <ClInclude Include="src\String\myString.hpp" />
     <ClInclude Include="src\test\test.h" />
     <ClInclude Include="src\LinkList\LinkList.hpp" />
   </ItemGroup>
@@ -33,6 +34,7 @@
     <ClCompile Include="src\stack\bracketCheck.cpp" />
     <ClCompile Include="src\stack\evaluateExpression.cpp" />
     <ClCompile Include="src\stack\stack.hpp" />
+    <ClCompile Include="src\String\testString.cpp" />
     <ClCompile Include="src\test\test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
