@@ -3,6 +3,7 @@
 #include <cassert>
 #include <stdexcept>
 #include "myString.h"
+#include <vector>
 using namespace std;
 
 // 前向声明所有测试函数
@@ -336,6 +337,77 @@ void test_kmp_search() {
     }
 }
 
+//=== 增强版Next数组测试 ===//
+void testEnhancedNextArray() {
+    cout << "\n[ Enhanced Next Array Tests ]\n";
+    myString s;
+
+    // 测试用例结构体
+    struct TestCase {
+        const char* pattern;
+        vector<int> expected;
+        const char* description;
+    };
+
+    // 测试用例集合（修改后预期数组）
+    vector<TestCase> testCases = {
+        {"ababcabaa", {-1,0,0,1,2,0,1,2,3}, "Partial repeat with backtracking"},
+        {"ABCDABD",   {-1,0,0,0,0,1,2},     "Standard KMP example"},
+        {"AAAAAA",    {-1,0,1,2,3,4},       "All identical characters"},
+        {"A",         {-1},                 "Single character"},
+        {"ABABA",     {-1,0,0,1,2},         "Overlapping prefix pattern"},
+        {"ABCABC",    {-1,0,0,0,1,2},       "Multiple partial matches"},
+        {"ABAABAB",   {-1,0,0,1,1,2,3},     "Complex backtracking scenario"},
+        {"abababa",   {-1,0,0,1,2,3,4},     "Progressive pattern growth"},
+        {"",          {},                   "Empty pattern (should return nullptr)"}
+    };
+
+    for (const auto& tc : testCases) {
+        cout << "\n-- Testing: " << tc.description << " (" << tc.pattern << ") --\n";
+        
+        int* actual = s.strFind_KMP_next_02(tc.pattern);
+        
+        // 处理空模式特殊情况
+        if (strlen(tc.pattern) == 0) {
+            if (actual != nullptr) {
+                cerr << "✗ Expected nullptr for empty pattern\n";
+                assert(false);
+            }
+            continue;
+        }
+
+        // 数组长度验证
+        if (actual == nullptr) {
+            cerr << "✗ Unexpected nullptr for non-empty pattern\n";
+            assert(false);
+        }
+
+        // 逐元素对比
+        bool allMatch = true;
+        for (size_t i = 0; i < tc.expected.size(); ++i) {
+            if (actual[i] != tc.expected[i]) {
+                cerr << "  ✗ Mismatch at index " << i 
+                     << "\n    Expected: " << tc.expected[i]
+                     << "\n    Actual:   " << actual[i] << endl;
+                allMatch = false;
+            }
+        }
+        
+        if (allMatch) {
+            cout << "✓ All elements matched\n";
+        } else {
+            // 打印完整数组对比
+            cout << "Expected: [";
+            for (auto val : tc.expected) cout << val << " ";
+            cout << "]\nActual:   [";
+            for (size_t i = 0; i < tc.expected.size(); ++i) cout << actual[i] << " ";
+            cout << "]\n";
+            assert(false);
+        }
+
+        delete[] actual;
+    }
+}
 
 int main() {
 
@@ -350,6 +422,7 @@ int main() {
     test_kmp_next(); // 新增KMP测试
     test_kmp_next();    // 原有next数组测试
     test_kmp_search();  // 新增搜索测试
+    testEnhancedNextArray();
 
     cout << "\n=== All enhanced tests passed! ===\n";
     return 0;

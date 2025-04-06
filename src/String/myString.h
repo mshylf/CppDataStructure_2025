@@ -46,7 +46,9 @@ public:
     int strFind_normal(const char * chars);
     // 求kmp算法中next算法
     int *strFind_KMP_next_01(const char * chars);
-    // 简单的KMP算法
+    // 优化next算法
+    int *strFind_KMP_next_02(const char * chars);
+    // KMP算法
     int strFind_KMP_01(const char*chars);
 
 private:
