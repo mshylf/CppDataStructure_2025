@@ -17,9 +17,9 @@ public:
     myString &operator=(const myString &otherStr);
     // 移动构造函数，当前字符串直接接管对象字符串在堆区的内存
     // 参数中传入&&表示右值引用，并与拷贝构造函数形成区分
-    myString(myString &&otherStr);
+    myString(myString &&otherStr) noexcept;
     // 移动赋值运算符
-    myString &operator=(myString &&otherStr);
+    myString &operator=(myString &&otherStr) noexcept;
     // 析构函数
     ~myString();
     // 串联接，将其他串接到当前串之后

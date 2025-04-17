@@ -40,7 +40,7 @@ myString &myString::operator=(const myString &otherStr)
 
 // 右值引用（Rvalue Reference）是 C++11 引入的特性，用 && 符号表示。
 // 它专门用于绑定临时对象（右值），允许高效地"转移"资源而非复制。
-myString::myString(myString &&otherStr) : MAXSIZE(otherStr.MAXSIZE), length(otherStr.length), data(otherStr.data)
+myString::myString(myString &&otherStr) noexcept : MAXSIZE(otherStr.MAXSIZE), length(otherStr.length), data(otherStr.data)
 {
     // 清空对象资源的所有权，防止双重释放（释放掉当前的data内存）
     otherStr.data = nullptr;
@@ -48,7 +48,7 @@ myString::myString(myString &&otherStr) : MAXSIZE(otherStr.MAXSIZE), length(othe
     otherStr.MAXSIZE = 0;
 }
 
-myString &myString::operator=(myString &&otherStr)
+myString &myString::operator=(myString &&otherStr) noexcept
 {
     if (this != &otherStr)
     {
