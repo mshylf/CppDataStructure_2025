@@ -201,13 +201,13 @@ int myString::strFind_normal(const char *chars)
     }
     for (int i = 0; i < this->length - chars_length + 1; i++)
     {
-        int k = i;
-        for (int j = 0; j < chars_length; j++, k++)
+        int j=0;
+        // 模式串从头开始匹配
+        while(j<chars_length&&this->data[i+j]==chars[j])
         {
-            if (this->data[i] != chars[j])
-                break;
+            j++;
         }
-        if (k - i == chars_length)
+        if (j == chars_length)
         {
             return i + 1;
         }
@@ -223,7 +223,7 @@ int *myString::strFind_KMP_next_01(const char *chars)
 
     int *next = new int[chars_length];
 
-    if (chars_length == 0 || chars[0] == '\0')
+    if (chars_length == 0 || next == nullptr)
         return nullptr;
     if (chars_length == 1)
     {
@@ -254,6 +254,39 @@ int *myString::strFind_KMP_next_01(const char *chars)
         // if k==i
         next[i] = j;
     }
+    return next;
+}
+
+int *myString::strFind_KMP_next_02(const char *chars)
+{
+    int chars_length = 0;
+    while (chars[chars_length] != '\0')
+        chars_length++;
+
+    int *next = new int[chars_length];
+
+    if (chars_length == 0 || next == nullptr)
+        return nullptr;
+    if (chars_length == 1)
+    {
+        next[0] = -1;
+        return next;
+    }
+
+    next[0] = -1;
+    int j = -1, i = 0;
+    while (i < chars_length - 1)
+    {
+        if (j == -1 || chars[j] == chars[i])
+        {
+            next[++i] = ++j;
+        }
+        else if(chars[j]!=chars[i])
+        {
+            j = next[j];
+        }
+    }
+
     return next;
 }
 
