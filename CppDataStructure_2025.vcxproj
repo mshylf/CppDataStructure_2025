@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\BItree\BItree.hpp" />
     <ClInclude Include="src\Queue\CQueue.hpp" />
     <ClInclude Include="src\SqList\SqList.hpp" />
     <ClInclude Include="src\stack\bracketCheck.h" />
